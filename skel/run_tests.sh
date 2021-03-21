@@ -3,7 +3,7 @@
 SRC=tema
 TESTS=tests
 OUT=out
-PYTHON_CMD=python3
+PYTHON_CMD=python
 
 # Cleanup the previous run's temporary files
 rm -f ${TESTS}/*.out.sorted

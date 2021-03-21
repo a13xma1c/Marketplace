@@ -41,13 +41,13 @@
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id2",
+                            "product": "id1",
                             "quantity": 1
                         },
                         {
                             "type": "add",
-                            "product": "id1",
-                            "quantity": 3
+                            "product": "id2",
+                            "quantity": 1
                         },
                         {
                             "type": "remove",
@@ -56,8 +56,7 @@
                         }
                     ],
                     "expected_cart": {
-                        "id2": 1,
-                        "id1": 2
+                        "id2": 1
                     }
                 }
             ]

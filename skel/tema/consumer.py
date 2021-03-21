@@ -31,7 +31,7 @@ class Consumer(Thread):
         :type kwargs:
         :param kwargs: other arguments that are passed to the Thread's __init__()
         """
-        pass
+        super().__init__(kwargs)
 
     def run(self):
         pass

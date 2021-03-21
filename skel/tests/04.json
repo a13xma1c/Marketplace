@@ -122,6 +122,11 @@
                     "ops": [
                         {
                             "type": "add",
+                            "product": "id2",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
                             "product": "id1",
                             "quantity": 5
                         },
@@ -129,22 +134,12 @@
                             "type": "add",
                             "product": "id3",
                             "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id3",
-                            "quantity": 1
                         }
                     ],
                     "expected_cart": {
+                        "id2": 3,
                         "id1": 5,
-                        "id3": 3,
-                        "id2": 1
+                        "id3": 4
                     }
                 },
                 {
@@ -152,11 +147,6 @@
                         {
                             "type": "add",
                             "product": "id3",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
                             "quantity": 1
                         },
                         {
@@ -166,35 +156,41 @@
                         },
                         {
                             "type": "remove",
-                            "product": "id1",
-                            "quantity": 1
+                            "product": "id2",
+                            "quantity": 2
                         }
                     ],
                     "expected_cart": {
-                        "id3": 4,
-                        "id2": 5
+                        "id3": 1,
+                        "id2": 3
                     }
                 },
                 {
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id1",
+                            "product": "id3",
                             "quantity": 1
                         },
                         {
                             "type": "add",
-                            "product": "id3",
+                            "product": "id2",
                             "quantity": 5
                         },
                         {
-                            "type": "remove",
+                            "type": "add",
                             "product": "id1",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id3",
                             "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id3": 5
+                        "id2": 5,
+                        "id1": 4
                     }
                 },
                 {
@@ -214,16 +210,55 @@
                         {
                             "type": "add",
                             "product": "id3",
-                            "quantity": 4
+                            "quantity": 1
                         },
                         {
-                            "type": "remove",
-                            "product": "id3",
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id1",
                             "quantity": 2
                         }
                     ],
                     "expected_cart": {
-                        "id3": 2
+                        "id3": 1,
+                        "id2": 1,
+                        "id1": 2
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id1",
+                            "quantity": 5
+                        }
+                    ],
+                    "expected_cart": {}
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id1",
+                            "quantity": 4
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 1
                     }
                 },
                 {
@@ -231,26 +266,16 @@
                         {
                             "type": "add",
                             "product": "id3",
-                            "quantity": 4
+                            "quantity": 1
                         },
                         {
                             "type": "add",
                             "product": "id2",
                             "quantity": 3
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id1",
-                            "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id3": 4,
+                        "id3": 1,
                         "id2": 3
                     }
                 },
@@ -258,28 +283,17 @@
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id1",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "add",
                             "product": "id3",
-                            "quantity": 1
+                            "quantity": 2
                         },
                         {
                             "type": "add",
                             "product": "id2",
                             "quantity": 2
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id1",
-                            "quantity": 2
                         }
                     ],
                     "expected_cart": {
-                        "id1": 1,
-                        "id3": 1,
+                        "id3": 2,
                         "id2": 2
                     }
                 },
@@ -287,48 +301,29 @@
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id1",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id1": 2,
-                        "id3": 1
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id3": 2
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
                             "product": "id2",
-                            "quantity": 1
+                            "quantity": 3
                         },
                         {
                             "type": "add",
                             "product": "id1",
-                            "quantity": 5
+                            "quantity": 2
+                        },
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id3",
+                            "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id2": 1,
-                        "id1": 5
+                        "id2": 3,
+                        "id1": 2,
+                        "id3": 2
                     }
                 }
             ]

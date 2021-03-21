@@ -11,10 +11,10 @@ import sys
 
 def main():
     if len(sys.argv) != 4:
-        print("Invalid number of arguments\nUsage: check_test.py testname output_filepath ref_filepath")
+        print("Invalid number of arguments\nUsage: check_test.py test_name output_filepath ref_filepath")
         return
 
-    testname = sys.argv[1]
+    test_name = sys.argv[1]
     output_filename = sys.argv[2]
     ref_filename = sys.argv[3]
     # load the lines from the output file and sort them
@@ -37,9 +37,9 @@ def main():
     out, err = command.communicate()
 
     if len(out) == 0:
-        print(f"Test {testname}" + ":\t\t" + "PASSED")
+        print(f"Test {test_name}" + ":\t\t" + "PASSED")
     else:
-        print(f"Test {testname}" + ":\t\t" + "FAILED")
+        print(f"Test {test_name}" + ":\t\t" + "FAILED")
 
 
 if __name__ == "__main__":
