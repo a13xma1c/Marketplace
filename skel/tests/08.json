@@ -242,37 +242,49 @@
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id4",
-                            "quantity": 1
+                            "product": "id1",
+                            "quantity": 2
                         },
                         {
                             "type": "add",
-                            "product": "id1",
+                            "product": "id5",
                             "quantity": 2
                         }
                     ],
                     "expected_cart": {
-                        "id4": 1,
-                        "id1": 2
+                        "id1": 2,
+                        "id5": 2
                     }
                 },
                 {
                     "ops": [
                         {
                             "type": "add",
+                            "product": "id1",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "add",
                             "product": "id5",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "add",
+                            "product": "id3",
                             "quantity": 5
                         }
                     ],
                     "expected_cart": {
-                        "id5": 5
+                        "id1": 2,
+                        "id5": 5,
+                        "id3": 5
                     }
                 }
             ]
         },
         {
             "name": "cons2",
-            "retry_wait_time": 0.06,
+            "retry_wait_time": 0.19,
             "carts": [
                 {
                     "ops": [
@@ -280,22 +292,22 @@
                             "type": "add",
                             "product": "id5",
                             "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id5": 1,
-                        "id1": 3,
-                        "id2": 1
+                        "id5": 1
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 4
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 4
                     }
                 },
                 {
@@ -307,60 +319,98 @@
                         },
                         {
                             "type": "add",
-                            "product": "id2",
-                            "quantity": 4
+                            "product": "id4",
+                            "quantity": 3
                         },
                         {
                             "type": "add",
-                            "product": "id5",
-                            "quantity": 2
+                            "product": "id3",
+                            "quantity": 1
                         }
                     ],
                     "expected_cart": {
                         "id1": 1,
-                        "id2": 4,
-                        "id5": 2
+                        "id4": 3,
+                        "id3": 1
                     }
                 }
             ]
         },
         {
             "name": "cons3",
-            "retry_wait_time": 0.38,
+            "retry_wait_time": 0.08,
             "carts": [
                 {
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id4",
-                            "quantity": 1
+                            "product": "id2",
+                            "quantity": 5
                         },
                         {
                             "type": "add",
                             "product": "id1",
-                            "quantity": 2
+                            "quantity": 4
+                        }
+                    ],
+                    "expected_cart": {
+                        "id2": 5,
+                        "id1": 4
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 3
                         },
                         {
                             "type": "add",
                             "product": "id2",
-                            "quantity": 1
+                            "quantity": 4
                         },
                         {
-                            "type": "remove",
-                            "product": "id1",
-                            "quantity": 2
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 5
                         }
                     ],
                     "expected_cart": {
-                        "id4": 1,
-                        "id2": 1
+                        "id4": 3,
+                        "id2": 4,
+                        "id5": 5
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 3
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 3,
+                        "id2": 5,
+                        "id5": 3
                     }
                 }
             ]
         },
         {
             "name": "cons4",
-            "retry_wait_time": 0.11,
+            "retry_wait_time": 0.26,
             "carts": [
                 {
                     "ops": [
@@ -371,89 +421,23 @@
                         },
                         {
                             "type": "add",
-                            "product": "id5",
-                            "quantity": 2
+                            "product": "id4",
+                            "quantity": 5
                         },
-                        {
-                            "type": "remove",
-                            "product": "id1",
-                            "quantity": 4
-                        }
-                    ],
-                    "expected_cart": {
-                        "id5": 2
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id1",
-                            "quantity": 3
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 2,
-                        "id5": 2
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id1",
-                            "quantity": 3
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 4,
-                        "id1": 1
-                    }
-                },
-                {
-                    "ops": [
                         {
                             "type": "add",
                             "product": "id3",
                             "quantity": 5
                         },
                         {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 1
-                        },
-                        {
                             "type": "remove",
-                            "product": "id2",
-                            "quantity": 1
+                            "product": "id4",
+                            "quantity": 4
                         }
                     ],
                     "expected_cart": {
+                        "id1": 4,
+                        "id4": 1,
                         "id3": 5
                     }
                 },
@@ -461,22 +445,70 @@
                     "ops": [
                         {
                             "type": "add",
+                            "product": "id2",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
                             "product": "id1",
-                            "quantity": 2
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id2",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 3,
+                        "id5": 1
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 3
                         },
                         {
                             "type": "add",
                             "product": "id3",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id1",
-                            "quantity": 2
+                            "quantity": 5
                         }
                     ],
                     "expected_cart": {
-                        "id3": 2
+                        "id5": 3,
+                        "id3": 5
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 5
+                        }
+                    ],
+                    "expected_cart": {
+                        "id4": 1,
+                        "id5": 1,
+                        "id3": 5
                     }
                 }
             ]
@@ -489,24 +521,104 @@
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id5",
-                            "quantity": 3
+                            "product": "id4",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id4",
+                            "quantity": 4
+                        }
+                    ],
+                    "expected_cart": {}
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 1
                         },
                         {
                             "type": "add",
                             "product": "id2",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id4",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 1,
+                        "id2": 3,
+                        "id4": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons6",
+            "retry_wait_time": 0.36,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id4",
                             "quantity": 4
                         },
                         {
                             "type": "add",
-                            "product": "id3",
-                            "quantity": 4
+                            "product": "id1",
+                            "quantity": 2
                         }
                     ],
                     "expected_cart": {
-                        "id5": 3,
-                        "id2": 4,
-                        "id3": 4
+                        "id4": 4,
+                        "id1": 2
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 4,
+                        "id4": 3,
+                        "id3": 1
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 5
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 5
                     }
                 },
                 {
@@ -525,86 +637,40 @@
                     "expected_cart": {
                         "id5": 1
                     }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id4",
-                            "quantity": 4
-                        }
-                    ],
-                    "expected_cart": {}
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 4
-                        }
-                    ],
-                    "expected_cart": {
-                        "id5": 1,
-                        "id4": 2,
-                        "id3": 4
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 4
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 5,
-                        "id4": 4
-                    }
                 }
             ]
         },
         {
-            "name": "cons6",
-            "retry_wait_time": 0.36,
+            "name": "cons7",
+            "retry_wait_time": 0.09,
             "carts": [
                 {
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id3",
+                            "product": "id1",
                             "quantity": 1
                         },
                         {
                             "type": "add",
-                            "product": "id4",
-                            "quantity": 4
+                            "product": "id3",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id2",
+                            "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id3": 1,
-                        "id4": 4
+                        "id1": 1,
+                        "id3": 3,
+                        "id2": 1
                     }
                 },
                 {
@@ -612,22 +678,21 @@
                         {
                             "type": "add",
                             "product": "id1",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 4
+                            "quantity": 2
                         },
                         {
                             "type": "add",
                             "product": "id5",
                             "quantity": 3
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id1",
+                            "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id1": 4,
-                        "id2": 4,
+                        "id1": 1,
                         "id5": 3
                     }
                 },
@@ -635,93 +700,41 @@
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id1",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id1": 1
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id1",
+                            "product": "id4",
                             "quantity": 5
-                        }
-                    ],
-                    "expected_cart": {
-                        "id1": 5
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons7",
-            "retry_wait_time": 0.36,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 1
                         },
                         {
                             "type": "add",
                             "product": "id5",
-                            "quantity": 1
+                            "quantity": 2
                         },
-                        {
-                            "type": "remove",
-                            "product": "id5",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 4,
-                        "id1": 1
-                    }
-                },
-                {
-                    "ops": [
                         {
                             "type": "add",
                             "product": "id2",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
                             "quantity": 2
                         },
                         {
                             "type": "remove",
-                            "product": "id3",
+                            "product": "id5",
                             "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id2": 1,
-                        "id3": 1
+                        "id4": 5,
+                        "id5": 1,
+                        "id2": 2
                     }
                 },
                 {
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id2",
+                            "product": "id3",
                             "quantity": 3
                         },
                         {
                             "type": "remove",
-                            "product": "id2",
+                            "product": "id3",
                             "quantity": 3
                         }
                     ],
@@ -731,180 +744,17 @@
         },
         {
             "name": "cons8",
-            "retry_wait_time": 0.37,
+            "retry_wait_time": 0.08,
             "carts": [
                 {
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id5",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 3
-                        }
-                    ],
-                    "expected_cart": {
-                        "id5": 4,
-                        "id4": 4,
-                        "id3": 3
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons9",
-            "retry_wait_time": 0.12,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id1",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 3
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 3
-                        }
-                    ],
-                    "expected_cart": {
-                        "id1": 1,
-                        "id3": 1,
-                        "id4": 3
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id5",
-                            "quantity": 3
-                        }
-                    ],
-                    "expected_cart": {}
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id3",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {}
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id2",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 1,
-                        "id1": 4
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons10",
-            "retry_wait_time": 0.09,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id3",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id4": 3
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "add",
                             "product": "id3",
                             "quantity": 2
                         }
                     ],
                     "expected_cart": {
-                        "id1": 3,
                         "id3": 2
                     }
                 },
@@ -912,38 +762,56 @@
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id5",
-                            "quantity": 1
+                            "product": "id3",
+                            "quantity": 2
                         },
                         {
                             "type": "add",
                             "product": "id4",
-                            "quantity": 1
+                            "quantity": 3
                         },
                         {
                             "type": "add",
+                            "product": "id5",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "remove",
                             "product": "id3",
                             "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id3": 1,
+                        "id4": 3,
+                        "id5": 1
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id5",
+                            "quantity": 2
                         }
                     ],
                     "expected_cart": {
                         "id5": 1,
-                        "id4": 1,
-                        "id3": 1
+                        "id1": 4
                     }
                 },
                 {
                     "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 1
-                        },
                         {
                             "type": "add",
                             "product": "id5",
@@ -952,199 +820,48 @@
                         {
                             "type": "remove",
                             "product": "id5",
-                            "quantity": 4
+                            "quantity": 3
                         }
                     ],
                     "expected_cart": {
-                        "id2": 1,
+                        "id5": 1
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id1",
+                            "quantity": 3
+                        }
+                    ],
+                    "expected_cart": {
                         "id1": 1
                     }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 3
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 3,
-                        "id4": 2,
-                        "id1": 3
-                    }
                 }
             ]
         },
         {
-            "name": "cons11",
-            "retry_wait_time": 0.2,
+            "name": "cons9",
+            "retry_wait_time": 0.17,
             "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id1",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {}
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id4": 2,
-                        "id3": 1
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 3
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 4,
-                        "id1": 4,
-                        "id4": 3
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons12",
-            "retry_wait_time": 0.09,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id4",
-                            "quantity": 3
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 4,
-                        "id4": 2
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 5
-                        }
-                    ],
-                    "expected_cart": {
-                        "id4": 5,
-                        "id2": 5
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id3",
-                            "quantity": 3
-                        }
-                    ],
-                    "expected_cart": {}
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 5
-                        }
-                    ],
-                    "expected_cart": {
-                        "id3": 5
-                    }
-                },
                 {
                     "ops": [
                         {
                             "type": "add",
                             "product": "id5",
                             "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id5": 4,
-                        "id3": 1
+                        "id5": 4
                     }
-                }
-            ]
-        },
-        {
-            "name": "cons13",
-            "retry_wait_time": 0.23,
-            "carts": [
+                },
                 {
                     "ops": [
                         {
@@ -1160,37 +877,105 @@
             ]
         },
         {
-            "name": "cons14",
-            "retry_wait_time": 0.16,
+            "name": "cons10",
+            "retry_wait_time": 0.18,
             "carts": [
                 {
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id2",
+                            "product": "id5",
                             "quantity": 4
                         },
                         {
                             "type": "add",
+                            "product": "id3",
+                            "quantity": 4
+                        }
+                    ],
+                    "expected_cart": {
+                        "id5": 4,
+                        "id3": 4
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons11",
+            "retry_wait_time": 0.2,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
                             "product": "id5",
-                            "quantity": 3
+                            "quantity": 2
                         },
                         {
                             "type": "remove",
                             "product": "id5",
-                            "quantity": 3
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {}
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id1",
+                            "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id2": 4
+                        "id1": 4
                     }
                 },
                 {
                     "ops": [
                         {
                             "type": "add",
+                            "product": "id3",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {
+                        "id3": 1,
+                        "id2": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons12",
+            "retry_wait_time": 0.09,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
                             "product": "id5",
                             "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id2",
+                            "quantity": 5
                         }
                     ],
                     "expected_cart": {
@@ -1202,12 +987,7 @@
                         {
                             "type": "add",
                             "product": "id4",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 5
+                            "quantity": 3
                         },
                         {
                             "type": "add",
@@ -1221,9 +1001,133 @@
                         }
                     ],
                     "expected_cart": {
-                        "id4": 5,
-                        "id2": 5,
+                        "id4": 3,
                         "id5": 2
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 3,
+                        "id3": 3,
+                        "id4": 1
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id4",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id2": 5,
+                        "id4": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons13",
+            "retry_wait_time": 0.23,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id2",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {}
+                }
+            ]
+        },
+        {
+            "name": "cons14",
+            "retry_wait_time": 0.17,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id4",
+                            "quantity": 3
+                        }
+                    ],
+                    "expected_cart": {}
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 5
+                        }
+                    ],
+                    "expected_cart": {
+                        "id5": 5
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons15",
+            "retry_wait_time": 0.31,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 4
+                        }
+                    ],
+                    "expected_cart": {
+                        "id5": 4,
+                        "id4": 4
                     }
                 },
                 {
@@ -1244,7 +1148,7 @@
             ]
         },
         {
-            "name": "cons15",
+            "name": "cons16",
             "retry_wait_time": 0.07,
             "carts": [
                 {
@@ -1252,97 +1156,17 @@
                         {
                             "type": "add",
                             "product": "id4",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id4": 4,
-                        "id5": 1
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "add",
-                            "product": "id5",
                             "quantity": 1
                         },
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id4",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 3,
-                        "id5": 1
-                    }
-                },
-                {
-                    "ops": [
                         {
                             "type": "add",
                             "product": "id5",
                             "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id1",
-                            "quantity": 3
                         }
                     ],
                     "expected_cart": {
+                        "id4": 1,
                         "id5": 2
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons16",
-            "retry_wait_time": 0.21,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 4
-                        }
-                    ],
-                    "expected_cart": {
-                        "id1": 4
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 5
-                        }
-                    ],
-                    "expected_cart": {
-                        "id1": 5
                     }
                 },
                 {
@@ -1350,45 +1174,29 @@
                         {
                             "type": "add",
                             "product": "id3",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id5",
                             "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id3": 5,
-                        "id1": 3,
-                        "id5": 1
+                        "id3": 1
                     }
                 },
                 {
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id5",
-                            "quantity": 4
+                            "product": "id2",
+                            "quantity": 5
                         },
                         {
-                            "type": "remove",
-                            "product": "id5",
-                            "quantity": 3
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id5": 1
+                        "id2": 5,
+                        "id4": 1
                     }
                 }
             ]
@@ -1401,112 +1209,18 @@
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id3",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id3": 5,
-                        "id1": 2
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
+                            "product": "id5",
                             "quantity": 4
                         },
                         {
-                            "type": "remove",
-                            "product": "id3",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id4": 2,
-                        "id3": 3
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons18",
-            "retry_wait_time": 0.38,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 5
-                        }
-                    ],
-                    "expected_cart": {
-                        "id3": 5,
-                        "id1": 5
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons19",
-            "retry_wait_time": 0.13,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 3
-                        },
-                        {
                             "type": "add",
                             "product": "id4",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id3",
-                            "quantity": 1
+                            "quantity": 4
                         }
                     ],
                     "expected_cart": {
-                        "id5": 3,
-                        "id4": 1,
-                        "id3": 1
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id4": 1
+                        "id5": 4,
+                        "id4": 4
                     }
                 },
                 {
@@ -1514,17 +1228,88 @@
                         {
                             "type": "add",
                             "product": "id2",
-                            "quantity": 4
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id2": 1
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 5
                         },
                         {
                             "type": "add",
                             "product": "id1",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id5",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id3": 5,
+                        "id1": 3,
+                        "id5": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons18",
+            "retry_wait_time": 0.36,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 3
+                        }
+                    ],
+                    "expected_cart": {
+                        "id5": 1,
+                        "id3": 5,
+                        "id4": 3
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id2",
                             "quantity": 4
                         },
                         {
                             "type": "remove",
                             "product": "id1",
-                            "quantity": 4
+                            "quantity": 1
                         }
                     ],
                     "expected_cart": {
@@ -1535,17 +1320,92 @@
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id3",
-                            "quantity": 3
+                            "product": "id1",
+                            "quantity": 1
                         },
                         {
                             "type": "add",
-                            "product": "id1",
+                            "product": "id5",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id5",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 1,
+                        "id5": 2
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id5",
                             "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id3": 3,
+                        "id5": 4
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 4
+                        }
+                    ],
+                    "expected_cart": {
+                        "id5": 4
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons19",
+            "retry_wait_time": 0.38,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {
+                        "id4": 2
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id1",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {
+                        "id4": 4,
                         "id1": 1
                     }
                 },
@@ -1553,42 +1413,57 @@
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id1",
-                            "quantity": 3
+                            "product": "id3",
+                            "quantity": 1
                         },
+                        {
+                            "type": "remove",
+                            "product": "id3",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {}
+                },
+                {
+                    "ops": [
                         {
                             "type": "add",
                             "product": "id3",
-                            "quantity": 2
+                            "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id1": 3,
-                        "id3": 2
+                        "id3": 1
                     }
                 }
             ]
         },
         {
             "name": "cons20",
-            "retry_wait_time": 0.34,
+            "retry_wait_time": 0.12,
             "carts": [
                 {
                     "ops": [
                         {
                             "type": "add",
                             "product": "id1",
-                            "quantity": 2
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 5
                         },
                         {
                             "type": "add",
                             "product": "id2",
-                            "quantity": 1
+                            "quantity": 2
                         }
                     ],
                     "expected_cart": {
-                        "id1": 2,
-                        "id2": 1
+                        "id1": 1,
+                        "id3": 5,
+                        "id2": 2
                     }
                 },
                 {
@@ -1596,29 +1471,97 @@
                         {
                             "type": "add",
                             "product": "id1",
-                            "quantity": 3
+                            "quantity": 4
                         },
                         {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 5
+                            "type": "remove",
+                            "product": "id1",
+                            "quantity": 2
                         }
                     ],
                     "expected_cart": {
-                        "id1": 3,
-                        "id5": 1,
-                        "id2": 5
+                        "id1": 2
                     }
                 }
             ]
         },
         {
             "name": "cons21",
+            "retry_wait_time": 0.06,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id3",
+                            "quantity": 5
+                        }
+                    ],
+                    "expected_cart": {
+                        "id4": 3
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id5",
+                            "quantity": 4
+                        }
+                    ],
+                    "expected_cart": {
+                        "id5": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons22",
+            "retry_wait_time": 0.36,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {
+                        "id5": 2
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 4
+                        }
+                    ],
+                    "expected_cart": {
+                        "id3": 4
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons23",
             "retry_wait_time": 0.35,
             "carts": [
                 {
@@ -1626,8 +1569,37 @@
                         {
                             "type": "add",
                             "product": "id1",
-                            "quantity": 3
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 1
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 2
                         },
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id5",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {
+                        "id4": 5
+                    }
+                },
+                {
+                    "ops": [
                         {
                             "type": "add",
                             "product": "id4",
@@ -1635,93 +1607,7 @@
                         }
                     ],
                     "expected_cart": {
-                        "id1": 3,
                         "id4": 3
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id2",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 1
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons22",
-            "retry_wait_time": 0.15,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id3",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 1,
-                        "id5": 5
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id2",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 1
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id3",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id3": 2
                     }
                 },
                 {
@@ -1729,28 +1615,17 @@
                         {
                             "type": "add",
                             "product": "id1",
-                            "quantity": 1
+                            "quantity": 3
                         },
                         {
                             "type": "add",
                             "product": "id4",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id5",
                             "quantity": 4
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id5",
-                            "quantity": 2
                         }
                     ],
                     "expected_cart": {
-                        "id1": 1,
-                        "id4": 2,
-                        "id5": 2
+                        "id1": 3,
+                        "id4": 4
                     }
                 },
                 {
@@ -1758,103 +1633,50 @@
                         {
                             "type": "add",
                             "product": "id4",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id3",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id4": 3,
-                        "id5": 2
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons23",
-            "retry_wait_time": 0.18,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
                             "quantity": 2
                         },
                         {
                             "type": "add",
-                            "product": "id4",
-                            "quantity": 3
+                            "product": "id1",
+                            "quantity": 1
                         },
                         {
                             "type": "remove",
-                            "product": "id3",
+                            "product": "id1",
                             "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id3": 1,
-                        "id4": 3
+                        "id4": 2
                     }
                 }
             ]
         },
         {
             "name": "cons24",
-            "retry_wait_time": 0.38,
+            "retry_wait_time": 0.33,
             "carts": [
                 {
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id1",
-                            "quantity": 4
+                            "product": "id4",
+                            "quantity": 2
                         },
                         {
                             "type": "add",
-                            "product": "id2",
-                            "quantity": 4
-                        }
-                    ],
-                    "expected_cart": {
-                        "id1": 4,
-                        "id2": 4
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons25",
-            "retry_wait_time": 0.32,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 4
+                            "product": "id5",
+                            "quantity": 2
                         },
                         {
                             "type": "remove",
-                            "product": "id2",
-                            "quantity": 3
+                            "product": "id4",
+                            "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id2": 1
+                        "id4": 1,
+                        "id5": 2
                     }
                 },
                 {
@@ -1879,12 +1701,12 @@
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id4",
+                            "product": "id5",
                             "quantity": 2
                         },
                         {
                             "type": "add",
-                            "product": "id5",
+                            "product": "id4",
                             "quantity": 3
                         },
                         {
@@ -1894,12 +1716,12 @@
                         },
                         {
                             "type": "remove",
-                            "product": "id4",
+                            "product": "id5",
                             "quantity": 2
                         }
                     ],
                     "expected_cart": {
-                        "id5": 3,
+                        "id4": 3,
                         "id1": 1
                     }
                 },
@@ -1907,58 +1729,53 @@
                     "ops": [
                         {
                             "type": "add",
+                            "product": "id1",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "add",
                             "product": "id4",
                             "quantity": 4
                         },
                         {
                             "type": "add",
-                            "product": "id1",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id1",
-                            "quantity": 1
+                            "product": "id5",
+                            "quantity": 3
                         }
                     ],
                     "expected_cart": {
+                        "id1": 5,
                         "id4": 4,
-                        "id1": 1,
-                        "id3": 5
+                        "id5": 3
                     }
                 }
             ]
         },
         {
-            "name": "cons26",
+            "name": "cons25",
             "retry_wait_time": 0.09,
             "carts": [
                 {
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id3",
-                            "quantity": 4
+                            "product": "id4",
+                            "quantity": 5
                         },
                         {
                             "type": "remove",
-                            "product": "id3",
+                            "product": "id4",
                             "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id3": 3
+                        "id4": 4
                     }
                 }
             ]
         },
         {
-            "name": "cons27",
+            "name": "cons26",
             "retry_wait_time": 0.31,
             "carts": [
                 {
@@ -1987,11 +1804,256 @@
                     "ops": [
                         {
                             "type": "add",
+                            "product": "id2",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {
+                        "id2": 2
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 5
+                        }
+                    ],
+                    "expected_cart": {
+                        "id3": 5,
+                        "id2": 5
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons27",
+            "retry_wait_time": 0.24,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {
+                        "id3": 3,
+                        "id5": 5,
+                        "id2": 2
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id1",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 2
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id4",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {
+                        "id3": 4,
+                        "id5": 4
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 5
+                        }
+                    ],
+                    "expected_cart": {
+                        "id4": 4,
+                        "id3": 1,
+                        "id1": 5
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons28",
+            "retry_wait_time": 0.06,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 4
+                        }
+                    ],
+                    "expected_cart": {
+                        "id5": 1,
+                        "id1": 4
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 3
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 3,
+                        "id5": 3
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {
+                        "id3": 2
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id4",
+                            "quantity": 3
+                        }
+                    ],
+                    "expected_cart": {
+                        "id3": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons29",
+            "retry_wait_time": 0.2,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id1",
+                            "quantity": 4
+                        }
+                    ],
+                    "expected_cart": {
+                        "id5": 2,
+                        "id3": 2
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "add",
                             "product": "id5",
                             "quantity": 2
                         }
                     ],
                     "expected_cart": {
+                        "id2": 4,
                         "id5": 2
                     }
                 },
@@ -1999,50 +2061,18 @@
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id4",
-                            "quantity": 3
+                            "product": "id2",
+                            "quantity": 2
                         },
-                        {
-                            "type": "remove",
-                            "product": "id4",
-                            "quantity": 3
-                        }
-                    ],
-                    "expected_cart": {}
-                }
-            ]
-        },
-        {
-            "name": "cons28",
-            "retry_wait_time": 0.23,
-            "carts": [
-                {
-                    "ops": [
                         {
                             "type": "add",
                             "product": "id1",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
                             "quantity": 3
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id3",
-                            "quantity": 2
                         }
                     ],
                     "expected_cart": {
-                        "id1": 5,
-                        "id4": 4,
-                        "id3": 1
+                        "id2": 2,
+                        "id1": 3
                     }
                 },
                 {
@@ -2054,75 +2084,112 @@
                         },
                         {
                             "type": "add",
-                            "product": "id5",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id2",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id5": 4,
-                        "id1": 4
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons29",
-            "retry_wait_time": 0.17,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
+                            "product": "id3",
                             "quantity": 5
                         },
                         {
                             "type": "add",
-                            "product": "id5",
+                            "product": "id4",
                             "quantity": 3
                         },
                         {
                             "type": "remove",
-                            "product": "id5",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id4": 4,
-                        "id2": 5,
-                        "id5": 1
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
                             "product": "id4",
-                            "quantity": 5
+                            "quantity": 2
                         }
                     ],
                     "expected_cart": {
                         "id2": 1,
+                        "id3": 5,
+                        "id4": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons30",
+            "retry_wait_time": 0.07,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id4",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id5": 3,
+                        "id4": 3,
+                        "id2": 2
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 3
+                        }
+                    ],
+                    "expected_cart": {
+                        "id2": 3
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 4
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 1,
+                        "id2": 4
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 5
+                        }
+                    ],
+                    "expected_cart": {
+                        "id5": 2,
+                        "id2": 3,
                         "id4": 5
                     }
                 },
@@ -2134,22 +2201,91 @@
                             "quantity": 4
                         },
                         {
-                            "type": "remove",
-                            "product": "id3",
-                            "quantity": 1
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 3
                         }
                     ],
                     "expected_cart": {
-                        "id3": 3
+                        "id3": 4,
+                        "id5": 3,
+                        "id4": 3
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons31",
+            "retry_wait_time": 0.23,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id3",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {
+                        "id2": 2
                     }
                 },
                 {
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id1",
-                            "quantity": 3
+                            "product": "id4",
+                            "quantity": 4
                         },
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 3
+                        }
+                    ],
+                    "expected_cart": {
+                        "id4": 4,
+                        "id3": 3
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons32",
+            "retry_wait_time": 0.07,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id4",
+                            "quantity": 4
+                        }
+                    ],
+                    "expected_cart": {}
+                },
+                {
+                    "ops": [
                         {
                             "type": "add",
                             "product": "id4",
@@ -2157,28 +2293,41 @@
                         },
                         {
                             "type": "add",
-                            "product": "id5",
+                            "product": "id1",
                             "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id1": 3,
                         "id4": 1,
-                        "id5": 1
+                        "id1": 1
                     }
-                }
-            ]
-        },
-        {
-            "name": "cons30",
-            "retry_wait_time": 0.4,
-            "carts": [
+                },
                 {
                     "ops": [
                         {
                             "type": "add",
+                            "product": "id4",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id4",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {}
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "add",
                             "product": "id2",
-                            "quantity": 3
+                            "quantity": 2
                         },
                         {
                             "type": "add",
@@ -2186,18 +2335,13 @@
                             "quantity": 2
                         },
                         {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 1
-                        },
-                        {
                             "type": "remove",
-                            "product": "id3",
-                            "quantity": 1
+                            "product": "id2",
+                            "quantity": 2
                         }
                     ],
                     "expected_cart": {
-                        "id2": 3,
+                        "id1": 4,
                         "id5": 2
                     }
                 },
@@ -2205,65 +2349,60 @@
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id2",
-                            "quantity": 4
+                            "product": "id5",
+                            "quantity": 5
                         },
                         {
                             "type": "add",
                             "product": "id3",
-                            "quantity": 4
+                            "quantity": 5
                         }
                     ],
                     "expected_cart": {
-                        "id2": 4,
-                        "id3": 4
+                        "id5": 5,
+                        "id3": 5
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons33",
+            "retry_wait_time": 0.3,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id5": 2,
+                        "id3": 1,
+                        "id2": 1
                     }
                 },
                 {
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id2",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 2,
-                        "id3": 2
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons31",
-            "retry_wait_time": 0.21,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
                             "product": "id4",
                             "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id5",
-                            "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id4": 2,
-                        "id5": 1
+                        "id4": 2
                     }
                 },
                 {
@@ -2275,18 +2414,17 @@
                         },
                         {
                             "type": "add",
-                            "product": "id2",
-                            "quantity": 2
+                            "product": "id4",
+                            "quantity": 1
                         },
                         {
                             "type": "remove",
-                            "product": "id2",
+                            "product": "id4",
                             "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id1": 1,
-                        "id2": 1
+                        "id1": 1
                     }
                 },
                 {
@@ -2300,299 +2438,20 @@
                     "expected_cart": {
                         "id5": 3
                     }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id2",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id5": 4,
-                        "id3": 4
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons32",
-            "retry_wait_time": 0.14,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 3
-                        }
-                    ],
-                    "expected_cart": {
-                        "id3": 3
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id1",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {}
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id1",
-                            "quantity": 4
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 2,
-                        "id5": 5
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 5
-                        }
-                    ],
-                    "expected_cart": {
-                        "id3": 5
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons33",
-            "retry_wait_time": 0.26,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 3
-                        }
-                    ],
-                    "expected_cart": {
-                        "id3": 3,
-                        "id4": 3
-                    }
                 }
             ]
         },
         {
             "name": "cons34",
-            "retry_wait_time": 0.23,
+            "retry_wait_time": 0.29,
             "carts": [
                 {
                     "ops": [
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 5
-                        },
                         {
                             "type": "add",
                             "product": "id2",
-                            "quantity": 3
-                        }
-                    ],
-                    "expected_cart": {
-                        "id1": 5,
-                        "id2": 3
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id3",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id3": 1
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons35",
-            "retry_wait_time": 0.22,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
                             "quantity": 5
-                        }
-                    ],
-                    "expected_cart": {
-                        "id3": 5
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 4
                         },
-                        {
-                            "type": "remove",
-                            "product": "id4",
-                            "quantity": 4
-                        }
-                    ],
-                    "expected_cart": {}
-                }
-            ]
-        },
-        {
-            "name": "cons36",
-            "retry_wait_time": 0.39,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id1": 1,
-                        "id5": 2
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id4",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {}
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id4": 2,
-                        "id1": 4,
-                        "id5": 2
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id5",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id3": 4
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons37",
-            "retry_wait_time": 0.3,
-            "carts": [
-                {
-                    "ops": [
                         {
                             "type": "add",
                             "product": "id5",
@@ -2600,18 +2459,31 @@
                         },
                         {
                             "type": "add",
-                            "product": "id4",
+                            "product": "id1",
                             "quantity": 3
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 2
                         }
                     ],
                     "expected_cart": {
+                        "id2": 5,
                         "id5": 3,
-                        "id4": 3,
+                        "id1": 3
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {
+                        "id4": 5,
                         "id3": 2
                     }
                 },
@@ -2620,13 +2492,233 @@
                         {
                             "type": "add",
                             "product": "id5",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id5",
                             "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id5": 1
+                        "id5": 2
                     }
                 },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id1",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id2": 2,
+                        "id1": 1
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id2",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id2": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons35",
+            "retry_wait_time": 0.27,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id5": 4,
+                        "id3": 3,
+                        "id2": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons36",
+            "retry_wait_time": 0.24,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id4",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id3": 3,
+                        "id5": 2
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 3
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 1,
+                        "id2": 3
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons37",
+            "retry_wait_time": 0.17,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id4",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id3": 2,
+                        "id5": 3
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {
+                        "id4": 1,
+                        "id1": 2
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id3": 1
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id2",
+                            "quantity": 3
+                        }
+                    ],
+                    "expected_cart": {
+                        "id4": 2,
+                        "id2": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons38",
+            "retry_wait_time": 0.16,
+            "carts": [
                 {
                     "ops": [
                         {
@@ -2636,24 +2728,145 @@
                         },
                         {
                             "type": "add",
-                            "product": "id2",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
                             "product": "id1",
                             "quantity": 5
                         },
                         {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 5
+                        },
+                        {
                             "type": "remove",
-                            "product": "id1",
-                            "quantity": 1
+                            "product": "id2",
+                            "quantity": 5
                         }
                     ],
                     "expected_cart": {
                         "id4": 3,
-                        "id2": 1,
-                        "id1": 4
+                        "id1": 5
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {
+                        "id4": 2
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {
+                        "id5": 3,
+                        "id2": 2,
+                        "id1": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons39",
+            "retry_wait_time": 0.38,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 4
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 1,
+                        "id4": 5,
+                        "id3": 4
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id4",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id3": 4,
+                        "id5": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons40",
+            "retry_wait_time": 0.15,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id5",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {
+                        "id3": 4
                     }
                 },
                 {
@@ -2662,6 +2875,176 @@
                             "type": "add",
                             "product": "id3",
                             "quantity": 5
+                        },
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 4
+                        }
+                    ],
+                    "expected_cart": {
+                        "id3": 5,
+                        "id5": 4
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons41",
+            "retry_wait_time": 0.32,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id2",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 1,
+                        "id4": 4,
+                        "id2": 2
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 3
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 5,
+                        "id3": 3
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 3
+                        }
+                    ],
+                    "expected_cart": {
+                        "id4": 1,
+                        "id3": 5,
+                        "id1": 3
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id2": 1,
+                        "id5": 5,
+                        "id4": 1
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id5",
+                            "quantity": 4
+                        }
+                    ],
+                    "expected_cart": {
+                        "id3": 3
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons42",
+            "retry_wait_time": 0.4,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 4
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 4
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons43",
+            "retry_wait_time": 0.17,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 4
                         },
                         {
                             "type": "add",
@@ -2671,569 +3054,53 @@
                     ],
                     "expected_cart": {
                         "id3": 5,
-                        "id1": 3
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons38",
-            "retry_wait_time": 0.29,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id2",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id3": 2,
-                        "id5": 5
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id4": 5,
-                        "id3": 2
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id5",
-                            "quantity": 5
-                        }
-                    ],
-                    "expected_cart": {}
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 5
-                        }
-                    ],
-                    "expected_cart": {
-                        "id1": 2,
-                        "id2": 2,
-                        "id4": 5
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 4
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 4
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons39",
-            "retry_wait_time": 0.13,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 3
-                        }
-                    ],
-                    "expected_cart": {
-                        "id4": 3
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id3",
-                            "quantity": 4
-                        }
-                    ],
-                    "expected_cart": {
-                        "id4": 1,
-                        "id1": 5,
-                        "id3": 1
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons40",
-            "retry_wait_time": 0.16,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 3
-                        }
-                    ],
-                    "expected_cart": {
                         "id2": 4,
-                        "id4": 5,
-                        "id3": 3
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id2",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 1,
-                        "id4": 3
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons41",
-            "retry_wait_time": 0.12,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 3
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 2,
-                        "id3": 3,
-                        "id5": 3
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 5
-                        }
-                    ],
-                    "expected_cart": {
-                        "id1": 5,
-                        "id3": 5
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 4,
-                        "id3": 1,
-                        "id1": 1
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons42",
-            "retry_wait_time": 0.07,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id3": 3,
-                        "id1": 4,
-                        "id4": 2
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 3
-                        }
-                    ],
-                    "expected_cart": {
-                        "id4": 3,
-                        "id2": 3
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons43",
-            "retry_wait_time": 0.28,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id4",
-                            "quantity": 5
-                        }
-                    ],
-                    "expected_cart": {
                         "id1": 3
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 4
-                        }
-                    ],
-                    "expected_cart": {
-                        "id4": 4
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id5": 2
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id3": 2
                     }
                 }
             ]
         },
         {
             "name": "cons44",
-            "retry_wait_time": 0.14,
+            "retry_wait_time": 0.24,
             "carts": [
                 {
                     "ops": [
                         {
                             "type": "add",
                             "product": "id5",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id5": 2
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons45",
-            "retry_wait_time": 0.2,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 4
-                        }
-                    ],
-                    "expected_cart": {
-                        "id5": 4
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id5": 3,
-                        "id1": 4,
-                        "id2": 1
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id3",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id1": 3
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id4",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id4": 1
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
                             "quantity": 5
                         },
                         {
-                            "type": "remove",
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "add",
                             "product": "id3",
-                            "quantity": 1
+                            "quantity": 4
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id1",
+                            "quantity": 3
                         }
                     ],
                     "expected_cart": {
+                        "id5": 5,
+                        "id1": 2,
                         "id3": 4
                     }
                 }
             ]
         },
         {
-            "name": "cons46",
-            "retry_wait_time": 0.32,
+            "name": "cons45",
+            "retry_wait_time": 0.15,
             "carts": [
                 {
                     "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id2",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id3": 4,
-                        "id1": 1,
-                        "id2": 3
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id3",
-                            "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {}
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 3
-                        },
                         {
                             "type": "add",
                             "product": "id3",
@@ -3241,18 +3108,19 @@
                         },
                         {
                             "type": "add",
-                            "product": "id2",
-                            "quantity": 1
+                            "product": "id5",
+                            "quantity": 4
                         },
                         {
-                            "type": "remove",
-                            "product": "id5",
-                            "quantity": 3
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 2
                         }
                     ],
                     "expected_cart": {
                         "id3": 2,
-                        "id2": 1
+                        "id5": 4,
+                        "id2": 2
                     }
                 },
                 {
@@ -3260,68 +3128,27 @@
                         {
                             "type": "add",
                             "product": "id5",
-                            "quantity": 2
+                            "quantity": 4
                         },
                         {
                             "type": "add",
-                            "product": "id3",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
+                            "product": "id4",
                             "quantity": 1
-                        }
-                    ],
-                    "expected_cart": {
-                        "id5": 2,
-                        "id3": 3,
-                        "id1": 1
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 3
                         },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id5",
-                            "quantity": 3
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 3,
-                        "id3": 3
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons47",
-            "retry_wait_time": 0.2,
-            "carts": [
-                {
-                    "ops": [
                         {
                             "type": "add",
                             "product": "id2",
                             "quantity": 5
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id5",
+                            "quantity": 1
                         }
                     ],
                     "expected_cart": {
+                        "id5": 3,
+                        "id4": 1,
                         "id2": 5
                     }
                 },
@@ -3330,219 +3157,16 @@
                         {
                             "type": "add",
                             "product": "id2",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id3",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 1,
-                        "id3": 2
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons48",
-            "retry_wait_time": 0.07,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 1,
-                        "id5": 2
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id5",
                             "quantity": 3
                         },
                         {
                             "type": "add",
-                            "product": "id4",
-                            "quantity": 3
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 3
-                        }
-                    ],
-                    "expected_cart": {
-                        "id5": 3,
-                        "id4": 3,
-                        "id2": 3
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id3",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id3": 3,
-                        "id5": 5
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id2",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id4": 5,
-                        "id1": 5
-                    }
-                }
-            ]
-        },
-        {
-            "name": "cons49",
-            "retry_wait_time": 0.38,
-            "carts": [
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id5",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 3
-                        }
-                    ],
-                    "expected_cart": {
-                        "id5": 1,
-                        "id2": 3
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id3",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 4,
-                        "id3": 1,
-                        "id4": 2
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
-                            "product": "id4",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id4",
-                            "quantity": 4
-                        }
-                    ],
-                    "expected_cart": {
-                        "id2": 1,
-                        "id4": 1
-                    }
-                },
-                {
-                    "ops": [
-                        {
-                            "type": "add",
-                            "product": "id1",
-                            "quantity": 4
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "add",
                             "product": "id5",
                             "quantity": 4
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id2",
-                            "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id1": 4,
+                        "id2": 3,
                         "id5": 4
                     }
                 },
@@ -3550,32 +3174,92 @@
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id3",
-                            "quantity": 1
+                            "product": "id5",
+                            "quantity": 2
                         },
                         {
                             "type": "add",
+                            "product": "id2",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "remove",
                             "product": "id5",
-                            "quantity": 3
+                            "quantity": 2
                         }
                     ],
                     "expected_cart": {
-                        "id3": 1,
-                        "id5": 3
+                        "id2": 4,
+                        "id4": 1
                     }
                 }
             ]
         },
         {
-            "name": "cons50",
-            "retry_wait_time": 0.22,
+            "name": "cons46",
+            "retry_wait_time": 0.35,
             "carts": [
                 {
                     "ops": [
                         {
                             "type": "add",
                             "product": "id4",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id4",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {}
+                }
+            ]
+        },
+        {
+            "name": "cons47",
+            "retry_wait_time": 0.14,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
                             "quantity": 4
+                        },
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 3
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 4,
+                        "id3": 1,
+                        "id5": 3
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 5
                         },
                         {
                             "type": "remove",
@@ -3584,7 +3268,60 @@
                         }
                     ],
                     "expected_cart": {
-                        "id4": 3
+                        "id5": 5
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 4
+                        },
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {
+                        "id3": 4,
+                        "id1": 5,
+                        "id2": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons48",
+            "retry_wait_time": 0.08,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 1
+                        },
+                        {
+                            "type": "add",
+                            "product": "id2",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id2",
+                            "quantity": 3
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 1,
+                        "id2": 2
                     }
                 },
                 {
@@ -3595,53 +3332,137 @@
                             "quantity": 2
                         },
                         {
+                            "type": "remove",
+                            "product": "id4",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id4": 1
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 1
+                        },
+                        {
                             "type": "add",
                             "product": "id3",
-                            "quantity": 5
+                            "quantity": 2
                         },
+                        {
+                            "type": "add",
+                            "product": "id5",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {
+                        "id4": 1,
+                        "id3": 2,
+                        "id5": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons49",
+            "retry_wait_time": 0.37,
+            "carts": [
+                {
+                    "ops": [
                         {
                             "type": "add",
                             "product": "id5",
                             "quantity": 3
                         },
                         {
-                            "type": "remove",
-                            "product": "id5",
-                            "quantity": 2
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 5
+                        },
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id4": 2,
-                        "id3": 5,
-                        "id5": 1
+                        "id5": 3,
+                        "id4": 5,
+                        "id1": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cons50",
+            "retry_wait_time": 0.25,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id3",
+                            "quantity": 3
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id3",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id3": 2
                     }
                 },
                 {
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id5",
-                            "quantity": 1
+                            "product": "id2",
+                            "quantity": 5
                         },
                         {
                             "type": "add",
+                            "product": "id1",
+                            "quantity": 2
+                        }
+                    ],
+                    "expected_cart": {
+                        "id2": 5,
+                        "id1": 2
+                    }
+                },
+                {
+                    "ops": [
+                        {
+                            "type": "add",
                             "product": "id2",
-                            "quantity": 1
+                            "quantity": 5
+                        },
+                        {
+                            "type": "add",
+                            "product": "id4",
+                            "quantity": 2
                         },
                         {
                             "type": "remove",
-                            "product": "id5",
+                            "product": "id4",
                             "quantity": 1
                         }
                     ],
                     "expected_cart": {
-                        "id2": 1
+                        "id2": 5,
+                        "id4": 1
                     }
                 }
             ]
         }
     ],
     "marketplace": {
-        "queue_size_per_producer": 40
+        "queue_size_per_producer": 30
     }
 }
