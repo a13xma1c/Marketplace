@@ -5,7 +5,9 @@ Computer Systems Architecture Course
 Assignment 1
 March 2021
 """
+from threading import Lock
 import uuid
+from queue import *
 
 
 class Marketplace:
@@ -21,12 +23,17 @@ class Marketplace:
         :param queue_size_per_producer: the maximum size of a queue associated with each producer
         """
         self.queue_size_per_producer = queue_size_per_producer
+        self.queue_dict = dict()
+        self.cart_dict = dict()
+        self.lock = Lock()
 
     def register_producer(self):
         """
         Returns an id for the producer that calls this.
         """
-        return uuid.uuid4()
+        producer_id = uuid.uuid4()
+        self.queue_dict[producer_id] = list()
+        return producer_id
 
     def publish(self, producer_id, product):
         """
@@ -40,7 +47,14 @@ class Marketplace:
 
         :returns True or False. If the caller receives False, it should wait and then try again.
         """
-        pass
+        if producer_id in self.queue_dict.keys():
+            if len(self.queue_dict[producer_id]) == self.queue_size_per_producer:
+                return False
+            else:
+                self.queue_dict[producer_id].append(product)
+                return True
+        else:
+            self.queue_dict[producer_id] = list(product)
 
     def new_cart(self):
         """
@@ -48,7 +62,9 @@ class Marketplace:
 
         :returns an int representing the cart_id
         """
-        return uuid.uuid4()
+        cart_id = uuid.uuid4()
+        self.cart_dict[cart_id] = list()
+        return cart_id
 
     def add_to_cart(self, cart_id, product):
         """
@@ -62,7 +78,18 @@ class Marketplace:
 
         :returns True or False. If the caller receives False, it should wait and then try again
         """
-        pass
+        flat_list = [item for sl in self.queue_dict.values() for item in sl]
+        if product not in flat_list:
+            return False
+        self.lock.acquire()
+        for key in self.queue_dict.keys():
+            if product in self.queue_dict[key]:
+                self.queue_dict[key].remove(product)
+                self.cart_dict[cart_id].append((key, product))
+                break
+
+        self.lock.release()
+        return True
 
     def remove_from_cart(self, cart_id, product):
         """
@@ -74,7 +101,13 @@ class Marketplace:
         :type product: Product
         :param product: the product to remove from cart
         """
-        pass
+        self.lock.acquire()
+        for (k, p) in self.cart_dict[cart_id]:
+            if p == product:
+                self.cart_dict[cart_id].remove((k, product))
+                self.queue_dict[k].append(product)
+                break
+        self.lock.release()
 
     def place_order(self, cart_id):
         """
@@ -83,4 +116,4 @@ class Marketplace:
         :type cart_id: Int
         :param cart_id: id cart
         """
-        pass
+        return [p for (k, p) in self.cart_dict[cart_id]]

@@ -7,6 +7,8 @@ March 2021
 """
 
 from threading import Thread
+import json
+import time
 
 
 class Consumer(Thread):
@@ -34,7 +36,22 @@ class Consumer(Thread):
         self.carts = carts
         self.marketplace = marketplace
         self.retry_wait_time = retry_wait_time
-        super().__init__(kwargs=kwargs)
+        super().__init__(name=kwargs.get("name"), daemon=kwargs.get("daemon"))
 
     def run(self):
-        pass
+        cart_id = self.marketplace.new_cart()
+        for cart in self.carts:
+            for op in cart:
+                for i in range(0, op.get("quantity")):
+                    if op.get("type") == "add":
+                        status = False
+                        while not status:
+                            status = self.marketplace.add_to_cart(cart_id, op.get("product"))
+                            if status:
+                                break
+                            time.sleep(self.retry_wait_time)
+                    elif op.get("type") == "remove":
+                        self.marketplace.remove_from_cart(cart_id, op.get("product"))
+
+        for prod in self.marketplace.place_order(cart_id):
+            print(self.name + " bought " + prod.__repr__())
