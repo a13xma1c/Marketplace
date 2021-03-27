@@ -16,7 +16,6 @@ import argparse
 import random
 from json import loads, dumps
 
-from tema.product import *  # pylint: disable=wildcard-import, unused-wildcard-import
 from test_utils import *  # pylint: disable=wildcard-import, unused-wildcard-import
 
 

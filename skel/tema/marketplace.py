@@ -5,6 +5,7 @@ Computer Systems Architecture Course
 Assignment 1
 March 2021
 """
+import uuid
 
 
 class Marketplace:
@@ -19,13 +20,13 @@ class Marketplace:
         :type queue_size_per_producer: Int
         :param queue_size_per_producer: the maximum size of a queue associated with each producer
         """
-        pass
+        self.queue_size_per_producer = queue_size_per_producer
 
     def register_producer(self):
         """
         Returns an id for the producer that calls this.
         """
-        pass
+        return uuid.uuid4()
 
     def publish(self, producer_id, product):
         """
@@ -47,7 +48,7 @@ class Marketplace:
 
         :returns an int representing the cart_id
         """
-        pass
+        return uuid.uuid4()
 
     def add_to_cart(self, cart_id, product):
         """
