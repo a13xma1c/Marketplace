@@ -11,7 +11,7 @@ do
 done
 for i in {9..10}
 do
-    TIMEOUT_VALS[$i]=60
+    TIMEOUT_VALS[$i]=40
 done
 
 # Cleanup the previous run's temporary files
@@ -24,11 +24,14 @@ do
     rm -f "${TESTS}/$prefix".out
     echo "Starting test $i"
 
+    start_time=$(date +%s)
     timeout ${TIMEOUT_VALS[i]} ${PYTHON_CMD} test.py "${TESTS}/$prefix.in" > "${TESTS}/$prefix.out"
     if [ ! $? -eq 0 ]
     then
         echo "TIMEOUT. Test $i exceeded maximum allowed time of ${TIMEOUT_VALS[i]}"
     fi
+    end_time=$(date +%s)
+    echo "Test $i runtime: $((end_time - start_time)) sec"
 
     echo "Finished test $i"
     ${PYTHON_CMD} check_test.py $i "${TESTS}/$prefix.out" "${TESTS}/$prefix.ref.out"

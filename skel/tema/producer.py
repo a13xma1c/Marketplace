@@ -47,7 +47,7 @@ class Producer(Thread):
                     while not status:
                         status = self.marketplace.publish(producer_id, product[0])
                         if status:
+                            time.sleep(product[2])
                             break
                         time.sleep(self.republish_wait_time)
-                    time.sleep(product[2])
                     quantity -= 1

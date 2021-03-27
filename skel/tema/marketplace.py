@@ -6,6 +6,8 @@ Assignment 1
 March 2021
 """
 from threading import Lock
+from functools import reduce
+import operator
 import uuid
 
 
@@ -77,7 +79,7 @@ class Marketplace:
 
         :returns True or False. If the caller receives False, it should wait and then try again
         """
-        flat_list = [item for sl in self.queue_dict.values() for item in sl]
+        flat_list = reduce(operator.add, self.queue_dict.values())
         if product not in flat_list:
             return False
         self.add_lock.acquire()
