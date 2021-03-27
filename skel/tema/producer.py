@@ -41,7 +41,8 @@ class Producer(Thread):
         producer_id = self.marketplace.register_producer()
         while True:
             for product in self.products:
-                for i in range(0, product[1]):
+                quantity = product[1]
+                while quantity > 0:
                     status = False
                     while not status:
                         status = self.marketplace.publish(producer_id, product[0])
@@ -49,3 +50,4 @@ class Producer(Thread):
                             break
                         time.sleep(self.republish_wait_time)
                     time.sleep(product[2])
+                    quantity -= 1

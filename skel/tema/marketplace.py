@@ -7,7 +7,6 @@ March 2021
 """
 from threading import Lock
 import uuid
-from queue import *
 
 
 class Marketplace:
@@ -47,14 +46,13 @@ class Marketplace:
 
         :returns True or False. If the caller receives False, it should wait and then try again.
         """
-        if producer_id in self.queue_dict.keys():
-            if len(self.queue_dict[producer_id]) == self.queue_size_per_producer:
-                return False
-            else:
-                self.queue_dict[producer_id].append(product)
-                return True
+        condition = True
+        if len(self.queue_dict[producer_id]) == self.queue_size_per_producer:
+            condition = False
         else:
-            self.queue_dict[producer_id] = list(product)
+            self.queue_dict[producer_id].append(product)
+
+        return condition
 
     def new_cart(self):
         """
@@ -82,7 +80,7 @@ class Marketplace:
         if product not in flat_list:
             return False
         self.lock.acquire()
-        for key in self.queue_dict.keys():
+        for key in self.queue_dict:
             if product in self.queue_dict[key]:
                 self.queue_dict[key].remove(product)
                 self.cart_dict[cart_id].append((key, product))
@@ -102,10 +100,10 @@ class Marketplace:
         :param product: the product to remove from cart
         """
         self.lock.acquire()
-        for (k, p) in self.cart_dict[cart_id]:
-            if p == product:
-                self.cart_dict[cart_id].remove((k, product))
-                self.queue_dict[k].append(product)
+        for (key, prod) in self.cart_dict[cart_id]:
+            if prod == product:
+                self.cart_dict[cart_id].remove((key, product))
+                self.queue_dict[key].append(product)
                 break
         self.lock.release()
 
