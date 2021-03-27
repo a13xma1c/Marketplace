@@ -24,7 +24,8 @@ class Marketplace:
         self.queue_size_per_producer = queue_size_per_producer
         self.queue_dict = dict()
         self.cart_dict = dict()
-        self.lock = Lock()
+        self.add_lock = Lock()
+        self.remove_lock = Lock()
 
     def register_producer(self):
         """
@@ -79,14 +80,14 @@ class Marketplace:
         flat_list = [item for sl in self.queue_dict.values() for item in sl]
         if product not in flat_list:
             return False
-        self.lock.acquire()
-        for key in self.queue_dict:
-            if product in self.queue_dict[key]:
+        self.add_lock.acquire()
+        for key, value in self.queue_dict.items():
+            if product in value:
                 self.queue_dict[key].remove(product)
                 self.cart_dict[cart_id].append((key, product))
                 break
 
-        self.lock.release()
+        self.add_lock.release()
         return True
 
     def remove_from_cart(self, cart_id, product):
@@ -99,13 +100,13 @@ class Marketplace:
         :type product: Product
         :param product: the product to remove from cart
         """
-        self.lock.acquire()
+        self.remove_lock.acquire()
         for (key, prod) in self.cart_dict[cart_id]:
             if prod == product:
                 self.cart_dict[cart_id].remove((key, product))
                 self.queue_dict[key].append(product)
                 break
-        self.lock.release()
+        self.remove_lock.release()
 
     def place_order(self, cart_id):
         """
