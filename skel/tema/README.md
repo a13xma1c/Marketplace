@@ -7,7 +7,7 @@ the functionality of a queue.
 
 The **Marketplace** restricts the size of the queue of produced items and contains two dictionaries with list values that
 handle the distribution of products between producer queues (```queue_dict```) and consumer queues (```cart_dict```). All add and remove
-operation are guarded by locks (```add_lock```, ```remove_lock```) in order to protect the shared variables mentioned above. An ```add_to_cart```
+operation are guarded by a common lock (```lock```) in order to protect the shared variables mentioned above. An ```add_to_cart```
 operation removes a product from a producer queue and adds the item to a consumer queue. The consumer queue (```cart_dict[cart_id]```)
 is a list that contains tuple values, composed of the ```producer_id``` and the ```product``` reference. This model facilitates
 the implementation of the ```remove_from_cart``` operation. A certain product is removed from a specified consumer queue and added back

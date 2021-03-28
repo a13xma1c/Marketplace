@@ -26,8 +26,7 @@ class Marketplace:
         self.queue_size_per_producer = queue_size_per_producer
         self.queue_dict = dict()
         self.cart_dict = dict()
-        self.add_lock = Lock()
-        self.remove_lock = Lock()
+        self.lock = Lock()
 
     def register_producer(self):
         """
@@ -49,11 +48,13 @@ class Marketplace:
 
         :returns True or False. If the caller receives False, it should wait and then try again.
         """
+        self.lock.acquire()
         condition = True
         if len(self.queue_dict[producer_id]) == self.queue_size_per_producer:
             condition = False
         else:
             self.queue_dict[producer_id].append(product)
+        self.lock.release()
 
         return condition
 
@@ -63,8 +64,11 @@ class Marketplace:
 
         :returns an int representing the cart_id
         """
+        self.lock.acquire()
         cart_id = uuid.uuid4()
         self.cart_dict[cart_id] = list()
+        self.lock.release()
+
         return cart_id
 
     def add_to_cart(self, cart_id, product):
@@ -79,18 +83,19 @@ class Marketplace:
 
         :returns True or False. If the caller receives False, it should wait and then try again
         """
+        self.lock.acquire()
+        condition = False
         flat_list = reduce(operator.add, self.queue_dict.values())
-        if product not in flat_list:
-            return False
-        self.add_lock.acquire()
-        for key, value in self.queue_dict.items():
-            if product in value:
-                self.queue_dict[key].remove(product)
-                self.cart_dict[cart_id].append((key, product))
-                break
+        if product in flat_list:
+            for key, value in self.queue_dict.items():
+                if product in value:
+                    self.queue_dict[key].remove(product)
+                    self.cart_dict[cart_id].append((key, product))
+                    condition = True
+                    break
 
-        self.add_lock.release()
-        return True
+        self.lock.release()
+        return condition
 
     def remove_from_cart(self, cart_id, product):
         """
@@ -102,13 +107,13 @@ class Marketplace:
         :type product: Product
         :param product: the product to remove from cart
         """
-        self.remove_lock.acquire()
+        self.lock.acquire()
         for (key, prod) in self.cart_dict[cart_id]:
             if prod == product:
                 self.cart_dict[cart_id].remove((key, product))
                 self.queue_dict[key].append(product)
                 break
-        self.remove_lock.release()
+        self.lock.release()
 
     def place_order(self, cart_id):
         """
