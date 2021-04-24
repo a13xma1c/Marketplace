@@ -5,25 +5,37 @@ TESTS=tests
 OUT=out
 PYTHON_CMD=python
 
+for i in {1..8}
+do
+    TIMEOUT_VALS[$i]=30
+done
+for i in {9..10}
+do
+    TIMEOUT_VALS[$i]=40
+done
+
 # Cleanup the previous run's temporary files
 rm -f ${TESTS}/*.out.sorted
 
 # Run tests
-for i in {1..9}
+for i in {1..10}
 do
-   rm -f "${TESTS}/0$i".out
-   echo "Starting test $i"
-   ${PYTHON_CMD} test.py "${TESTS}/0$i.in" > "${TESTS}/0$i.out"
-   echo "Finished test $i"
-   ${PYTHON_CMD} check_test.py $i "${TESTS}/0$i.out" "${TESTS}/0$i.ref.out"
+    prefix=$(printf "%02d" $i)
+    rm -f "${TESTS}/$prefix".out
+    echo "Starting test $i"
+
+    start_time=$(date +%s)
+    timeout ${TIMEOUT_VALS[i]} ${PYTHON_CMD} test.py "${TESTS}/$prefix.in" > "${TESTS}/$prefix.out"
+    if [ ! $? -eq 0 ]
+    then
+        echo "TIMEOUT. Test $i exceeded maximum allowed time of ${TIMEOUT_VALS[i]}"
+    fi
+    end_time=$(date +%s)
+    echo "Test $i runtime: $((end_time - start_time)) sec"
+
+    echo "Finished test $i"
+    ${PYTHON_CMD} check_test.py $i "${TESTS}/$prefix.out" "${TESTS}/$prefix.ref.out"
 done
-
-rm -f "${TESTS}/10".out
-echo "Starting test 10"
-
-${PYTHON_CMD} test.py "${TESTS}/10.in" > "${TESTS}/10.out"
-echo "Finished test 10"
-${PYTHON_CMD} check_test.py 10 "${TESTS}/10.out" "${TESTS}/10.ref.out"
 
 # Pylint checks - the pylintrc file being in the same directory
 # Uncoment the following line to check your implementation's code style :)

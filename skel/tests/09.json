@@ -296,21 +296,18 @@
                         {
                             "type": "add",
                             "product": "id1",
-                            "quantity": 1
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id1",
-                            "quantity": 1
+                            "quantity": 4
                         }
                     ],
-                    "expected_cart": {}
+                    "expected_cart": {
+                        "id1": 4
+                    }
                 }
             ]
         },
         {
             "name": "cons2",
-            "retry_wait_time": 0.38,
+            "retry_wait_time": 0.3,
             "carts": [
                 {
                     "ops": [
@@ -340,22 +337,18 @@
                     "ops": [
                         {
                             "type": "add",
-                            "product": "id2",
-                            "quantity": 1
+                            "product": "id1",
+                            "quantity": 5
                         },
                         {
                             "type": "add",
-                            "product": "id1",
-                            "quantity": 5
-                        },
-                        {
-                            "type": "remove",
-                            "product": "id1",
-                            "quantity": 5
+                            "product": "id2",
+                            "quantity": 4
                         }
                     ],
                     "expected_cart": {
-                        "id2": 1
+                        "id1": 5,
+                        "id2": 4
                     }
                 },
                 {
@@ -363,49 +356,52 @@
                         {
                             "type": "add",
                             "product": "id2",
-                            "quantity": 2
+                            "quantity": 3
                         },
-                        {
-                            "type": "remove",
-                            "product": "id2",
-                            "quantity": 2
-                        }
-                    ],
-                    "expected_cart": {}
-                }
-            ]
-        },
-        {
-            "name": "cons4",
-            "retry_wait_time": 0.34,
-            "carts": [
-                {
-                    "ops": [
                         {
                             "type": "add",
                             "product": "id1",
-                            "quantity": 2
-                        },
-                        {
-                            "type": "add",
-                            "product": "id2",
-                            "quantity": 2
+                            "quantity": 3
                         },
                         {
                             "type": "remove",
-                            "product": "id2",
-                            "quantity": 2
+                            "product": "id1",
+                            "quantity": 1
                         }
                     ],
                     "expected_cart": {
+                        "id2": 3,
                         "id1": 2
                     }
                 }
             ]
         },
         {
+            "name": "cons4",
+            "retry_wait_time": 0.29,
+            "carts": [
+                {
+                    "ops": [
+                        {
+                            "type": "add",
+                            "product": "id1",
+                            "quantity": 2
+                        },
+                        {
+                            "type": "remove",
+                            "product": "id1",
+                            "quantity": 1
+                        }
+                    ],
+                    "expected_cart": {
+                        "id1": 1
+                    }
+                }
+            ]
+        },
+        {
             "name": "cons5",
-            "retry_wait_time": 0.09,
+            "retry_wait_time": 0.26,
             "carts": [
                 {
                     "ops": [
@@ -417,7 +413,7 @@
                         {
                             "type": "add",
                             "product": "id2",
-                            "quantity": 4
+                            "quantity": 5
                         },
                         {
                             "type": "remove",
@@ -427,7 +423,7 @@
                     ],
                     "expected_cart": {
                         "id1": 4,
-                        "id2": 1
+                        "id2": 2
                     }
                 },
                 {
